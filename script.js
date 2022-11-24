@@ -6,6 +6,7 @@ const daysSpan = clock.querySelector('.days');
 const hoursSpan = clock.querySelector('.hours');
 const minutesSpan = clock.querySelector('.minutes');
 const secondsSpan = clock.querySelector('.seconds');
+const savedTime = localStorage
 
 endDate.addEventListener('change',function(e){
    e.preventDefault();
@@ -21,9 +22,9 @@ function startClock(endTime){
       let t = timeRemaining(endTime);
       console.log(t);
       daysSpan.innerHTML = t.days;
-      hoursSpan.innerHTML = t.hours;
-      minutesSpan.innerHTML = t.minutes;
-      secondsSpan.innerHTML = t.seconds;
+      hoursSpan.innerHTML = ('0'+t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0'+t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0'+t.seconds).slice(-2);
       if(t.total<=0){
         clearInterval(timeInterval);
       }
