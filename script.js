@@ -47,4 +47,4 @@ function timeRemaining(endTime){
     }
 
 }
-// /console.log(endDate);
+// //console.log(endDate);
