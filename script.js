@@ -10,6 +10,8 @@ const savedTime = localStorage.getItem('countdown') || false;
 
 if(savedTime){
   startClock(savedTime);
+  let dated = new Date(savedTime);
+  endDate.valueAsDate = dated;
 
 }
 
@@ -19,7 +21,7 @@ endDate.addEventListener('change',function(e){
    clearInterval(timeInterval);
    console.dir(this);
    const endDateTemp = new Date(this.value);
-   localStorage(endDate)
+   localStorage.setItem('countdown',endDateTemp);
    startClock(endDateTemp);
 
 
